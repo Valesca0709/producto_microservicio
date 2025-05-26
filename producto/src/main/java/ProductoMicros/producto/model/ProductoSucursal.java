@@ -27,9 +27,8 @@ public class ProductoSucursal {
     @JoinColumn(name = "idProducto", nullable = false)
     private Producto producto;
     
-    @ManyToOne
-    @JoinColumn(name = "id_sucursal", nullable = false)
-    private Sucursal sucursal;
+    @Column(nullable = false)
+    private int idSucursal; 
     
     @Column(nullable = false)
     private int cantidad;

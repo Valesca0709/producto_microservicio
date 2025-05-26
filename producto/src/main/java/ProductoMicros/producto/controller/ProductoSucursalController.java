@@ -58,3 +58,4 @@ public class ProductoSucursalController {
         }
     }
 }
+//http://localhost:8095/api/v1/productoSucursal/calcular-total?idProductoSucursal=2&cantidad=3

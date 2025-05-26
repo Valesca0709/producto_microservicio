@@ -37,12 +37,9 @@ public class ProductoService {
     
     // Actualizar solo el stock
     public Producto updateStock(int id, int nuevoStock) {
-        Optional<Producto> productoOpt = productoRepository.findById(id);
-        if (productoOpt != null) {
-            Producto producto = productoOpt.get();
-            producto.setStock(nuevoStock);
-            return productoRepository.save(producto);
-        }
-        return null;
-    }
+    Producto producto = productoRepository.findById(id)
+        .orElseThrow(() -> new RuntimeException("Producto no encontrado con id: " + id));
+    producto.setStock(nuevoStock);
+    return productoRepository.save(producto);
+     }
 }
